@@ -4,14 +4,14 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
-import { HomeLayout } from './components/layouts/HomeLayout'
-import { ProtectedLayout } from './components/layouts/ProtectedLayout'
 import { AuthLayout } from './modules/auth/components/AuthLayout'
-import { SignIn } from './pages/auth/SignIn'
-import { SignUp } from './pages/auth/SignUp'
-import { TodoList } from './pages/dashboard/TodoList'
-import { Home } from './pages/Home'
-import { NoMatch } from './pages/NoMatch'
+import { SignIn } from './modules/auth/pages/SignIn'
+import { SignUp } from './modules/auth/pages/SignUp'
+import { NoMatch } from './modules/core/pages/NoMatch'
+import { HomeLayout } from './modules/home/components/HomeLayout'
+import { Home } from './modules/home/pages/Home'
+import { ProtectedLayout } from './modules/todo/ProtectedLayout'
+import { TodoList } from './modules/todo/TodoList'
 
 const queryClient = new QueryClient()
 

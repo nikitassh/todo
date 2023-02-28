@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import { CustomLink } from '../common/CustomLink'
+import { CustomLink } from '../../core/components/CustomLink'
 
 
 export const HomeLayout = () => {

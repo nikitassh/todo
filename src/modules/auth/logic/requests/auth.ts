@@ -1,10 +1,10 @@
 import { AxiosError, AxiosResponse } from 'axios'
 import { useMutation } from 'react-query'
 
-import { baseApi } from '../axios'
-import { notifier } from '../services/notifier'
-import { storage } from '../services/storage'
-import { SIGN_IN, SIGN_UP } from '../urls'
+import { baseApi } from '../../../core/logic/axios'
+import { notifier } from '../../../core/logic/services/notifier'
+import { storage } from '../../../core/logic/services/storage'
+import { SIGN_IN, SIGN_UP } from '../../../core/logic/urls'
 
 type SignInProps = { email: string, password: string }
 type SignUpProps = SignInProps & { firstName: string, lastName: string }
