@@ -1,17 +1,17 @@
 import 'react-toastify/dist/ReactToastify.css'
 
+import { AuthLayout } from '@auth/components/AuthLayout'
+import { SignIn } from '@auth/pages/SignIn'
+import { SignUp } from '@auth/pages/SignUp'
+import { NoMatch } from '@core/pages/NoMatch'
+import { HomeLayout } from '@home/components/HomeLayout'
+import { Home } from '@home/pages/Home'
+import { ProtectedLayout } from '@todo/ProtectedLayout'
+import { TodoList } from '@todo/TodoList'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
-import { AuthLayout } from './modules/auth/components/AuthLayout'
-import { SignIn } from './modules/auth/pages/SignIn'
-import { SignUp } from './modules/auth/pages/SignUp'
-import { NoMatch } from './modules/core/pages/NoMatch'
-import { HomeLayout } from './modules/home/components/HomeLayout'
-import { Home } from './modules/home/pages/Home'
-import { ProtectedLayout } from './modules/todo/ProtectedLayout'
-import { TodoList } from './modules/todo/TodoList'
 
 const queryClient = new QueryClient()
 

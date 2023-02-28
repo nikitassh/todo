@@ -1,4 +1,4 @@
-import { useSignInRequest } from '../../core/requests/auth'
+import { useSignInRequest } from '../logic/requests/auth'
 
 export const SignIn = () => {
     const sendData = {
