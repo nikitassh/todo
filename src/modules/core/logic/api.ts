@@ -1,16 +1,23 @@
-import axios from 'axios'
+import axios, { AxiosRequestTransformer, AxiosResponseTransformer } from 'axios'
+import humps from 'humps'
+
+
+const transformRequest: AxiosRequestTransformer = (data) => {
+    return humps.decamelizeKeys(data)
+}
+
+const transformResponse: AxiosResponseTransformer = (data) => {
+    return humps.camelizeKeys(JSON.parse(data))
+}
 
 const config = {
     baseURL: 'http://143.198.104.247:8000/api/v1',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 
-    // transformRequest: [function (data, headers) {
-    //     return data
-    // }],
-    //
-    // transformResponse: [function (data) {
-    //     return data
-    // }],
+
+    transformRequest: ([transformRequest] as any).concat(axios.defaults.transformRequest),
+
+    transformResponse: ([transformResponse] as any).concat(axios.defaults.transformResponse),
 
 
     // onUploadProgress: function (progressEvent) {
@@ -27,4 +34,4 @@ const config = {
     // },
 }
 
-export const baseApi = axios.create(config)
+export const api = axios.create(config)

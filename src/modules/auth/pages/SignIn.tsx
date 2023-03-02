@@ -3,7 +3,7 @@ import { useSignInRequest } from '../logic/requests/auth'
 export const SignIn = () => {
     const sendData = {
         email: 'soshninnikita23@gmail.com',
-        password: 'password1'
+        password: 'password'
     }
 
     const signIn = useSignInRequest()
@@ -13,6 +13,10 @@ export const SignIn = () => {
     }
 
     return (
-        <div onClick={onSubmit}>SignIn</div>
+        <div>
+            <div onClick={onSubmit}>SignIn</div>
+            <div></div>
+        </div>
+
     )
 }
