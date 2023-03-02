@@ -1,3 +1,4 @@
+import { useTokenStore } from '@auth/logic/store'
 import axios, { AxiosRequestTransformer, AxiosResponseTransformer } from 'axios'
 import humps from 'humps'
 
@@ -10,7 +11,7 @@ const transformResponse: AxiosResponseTransformer = (data) => {
     return humps.camelizeKeys(JSON.parse(data))
 }
 
-const config = {
+const apiConfig = {
     baseURL: 'http://143.198.104.247:8000/api/v1',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 
@@ -34,4 +35,14 @@ const config = {
     // },
 }
 
-export const api = axios.create(config)
+export const api = axios.create(apiConfig)
+
+api.interceptors.request.use((config) => {
+    const { token } = useTokenStore.getState()
+
+    if (config.headers && token) {
+        config.headers.Authorization = `Token ${token}`
+    }
+
+    return config
+})

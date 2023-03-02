@@ -19,6 +19,7 @@ export type AuthUser = {
 }
 
 export type AuthUserActions = {
+    isAuthenticated: boolean
     setUser: (data: AuthResponse) => void
     resetUser: () => void
 }

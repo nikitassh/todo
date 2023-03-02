@@ -91,7 +91,8 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         'object-curly-spacing': ["error", "always"],
         'semi': ["error", "never"],
-        'functional/type-declaration-immutability': "off"
+        'functional/type-declaration-immutability': 'off',
+        'functional/immutable-data': 'off'
     },
     ignorePatterns: ['.eslintrc.cjs', 'babel.config.js'],
     settings: {
